@@ -1,0 +1,152 @@
+:root {
+  color-scheme: light;
+  --paper: #f2f5f7;
+  --ink: #17364b;
+  --muted: #536b7d;
+  --line: #cfdae2;
+  --blue: #245fc5;
+  --pale-blue: #d8e5ee;
+  --orange: #eb8057;
+  --white: #fbfcfd;
+  --button-primary: #245fc5;
+  --button-primary-text: #ffffff;
+  --button-accent-text: #17364b;
+  --closing-background: #17364b;
+  --closing-text: #ffffff;
+  --closing-muted: #d1dce4;
+  --focus-ring: #245fc5;
+  --focus-shadow: #245fc51f;
+  --sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --display: var(--font-display), system-ui, -apple-system, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #101d29;
+  --ink: #e7edf1;
+  --muted: #a6b6c2;
+  --line: #2c4150;
+  --blue: #a9c5ff;
+  --pale-blue: #203848;
+  --orange: #f29a73;
+  --white: #172a38;
+  --button-primary: #a9c5ff;
+  --button-primary-text: #142536;
+  --button-accent-text: #17364b;
+  --closing-background: #09141c;
+  --closing-text: #f5f8fa;
+  --closing-muted: #b7c8d4;
+  --focus-ring: #a9c5ff;
+  --focus-shadow: #a9c5ff33;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-block-start: 0;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:where(a, button, input):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+section[id] {
+  scroll-margin-block-start: 24px;
+}
+
+.shell {
+  width: min(1160px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 50;
+  inset-block-start: -100px;
+  inset-inline-start: 12px;
+  padding: 10px 16px;
+  border-radius: 7px;
+  background: var(--ink);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  transition: inset-block-start 150ms ease;
+}
+
+.skip-link:focus {
+  inset-block-start: 12px;
+}
+
+@media (max-width: 600px) {
+  .shell {
+    width: min(100% - 36px, 500px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

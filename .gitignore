@@ -1,0 +1,31 @@
+# Dependencias y artefactos de Next.js
+node_modules/
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Resultados de pruebas
+test-results/
+playwright-report/
+blob-report/
+
+# Entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Herramientas locales de agentes (no se necesitan para ejecutar el sitio)
+.agents/
+skills-lock.json
+opencode.json
+
+# Python de las skills locales
+__pycache__/
+*.pyc
+
+# Sistema y editores
+.DS_Store
+.vscode/
+.idea/

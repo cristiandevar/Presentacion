@@ -1,0 +1,97 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88px;
+  border-block-end: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.brandMark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  background: var(--button-primary);
+  color: var(--button-primary-text);
+  font-size: 12px;
+  letter-spacing: -0.06em;
+}
+
+.brandName {
+  display: inline;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 14px;
+  list-style: none;
+}
+
+.nav a:hover {
+  color: var(--blue);
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 15px;
+  background: var(--ink);
+  color: var(--paper);
+  transition: background 160ms ease;
+}
+
+.cta:hover {
+  background: var(--blue);
+  color: var(--button-primary-text);
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    min-height: 72px;
+  }
+
+  .nav ul {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .cta {
+    padding: 9px 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .brandMark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav ul {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .brandName {
+    display: none;
+  }
+}
